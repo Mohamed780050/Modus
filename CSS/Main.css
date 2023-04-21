@@ -1,0 +1,391 @@
+:root {
+    --Main-color: #00c8fc;
+    --Seconder-color: #0f1012;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    list-style: none;
+}
+.main-heading {
+    text-align: center;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width: 992) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200) {
+    .container {
+        width: 1170px;
+    }
+}
+/* The Start Of The header Section  */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--Seconder-color);
+    font-weight: bold;
+    padding: 20px 15px;
+    transition: 0.55s;
+    border: 1px solid transparent;
+    font-size: 13.3px;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+    color: var(--Main-color);
+}
+header nav ul li a:hover {
+    border: 1px solid var(--Main-color);
+}
+header nav .Toggole {
+    width: 30px;
+    display: none;
+    flex-direction: column;
+}
+header nav .Toggole span{
+    width: 100%;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: black;
+}
+/* The End Of The header Section  */
+/* The Start Of The Landing Section  */
+.landing {
+    height: 90vh;
+    background-image: url(../images/header.jpg);
+    background-size: cover;
+    position: relative;
+    margin-bottom: -20px;
+}
+.landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+.landing .words {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+.landing .words .buttons button {
+    padding: 15px 30px;
+    margin: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.landing .words .buttons button:first-child {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.landing .words .buttons button:first-child:hover {
+    background-color: white;
+    color: black;
+}
+.landing .words .buttons button:last-child {
+    background-color: var(--Main-color);
+    color: white;
+    border: 1px solid var(--Main-color);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.landing .words .buttons button:last-child:hover {
+    background-color: white;
+    color: var(--Main-color);
+}
+/* The End Of The Landing Section  */
+.History {
+    background-color: #ddd;
+    text-align: center;
+}
+.History .container {
+    padding: 100px 0;
+}
+/* The Start Of The portfolio Section  */
+.portfolio .container .img-container {
+    width: 320px;
+    height: 555px;
+    position: relative;
+    margin: 10px auto;
+    z-index: 0;
+}
+.portfolio .container .img-container img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+}
+.portfolio .container .img-container img.active {
+    opacity: 1;
+}
+.portfolio .container .slide-number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 6px; 
+}
+.portfolio .container .indicators {
+    width: 57%;
+    float: left;
+    transform: translateY(-150%);
+}
+.portfolio .indicators ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+.portfolio .indicators ul li {
+    display: inline-block;
+    background-color: #f6f6f6;
+    color: #333;
+    font-weight: bold;
+    height: 28px;
+    width: 24px;
+    margin: 0 20px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.portfolio .indicators ul li.active {
+    background-color: #009688;
+    color: white;
+}
+.portfolio .prev,
+.portfolio .next {
+    background-color: #009688;
+    color: #FFF;
+    font-size: 16px;
+    width: 800px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px;
+    user-select: none;
+    width: 20%;
+}
+.portfolio .prev {
+    float: left;
+    transform: translateY(-150%);
+}
+.portfolio .next {
+    float: right;
+    transform: translateY(-150%);
+}
+.portfolio .prev.disabled,
+.portfolio .next.disabled {
+    background-color: rgba(0, 150, 136, 0.5);
+    cursor: no-drop;
+}
+/* The End Of The portfolio Section  */
+/* The Start Of The Services Section  */
+.services {
+    background-color: #ddd;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.services .container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.services .container .card {
+    background-color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+}
+.services .container .card .separator {
+    margin-top: 15px;
+    width: 50px;
+    height: 3.5px;
+    background-color: var(--Main-color);
+}
+/* The End Of The Services Section  */
+.clients .images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.clients .main-heading {
+    text-align: center;
+    padding: 100px 0;
+}
+/* The Start Of The About us Section  */
+.about {
+    background-color: #101012;
+    color: white;
+    border-bottom: 1px solid;
+    padding: 50px;
+}
+/* The End Of The About us Section  */
+/* The Start Of The Contact Us Section  */
+.contact {
+    background-color: #101012;
+    color: white;
+    border-bottom: 1px solid;
+    padding: 50px;
+}
+.contact form {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.contact form input[type='email'] {
+    padding: 10px;
+    border: 1px solid var(--Main-color);
+    background-color: transparent;
+    width: 350px;
+    color: white;
+}
+.contact form textarea {
+    background-color: transparent;
+    border: 1px solid var(--Main-color);
+    width: 350px;
+    height: 250px;
+    padding: 10px;
+    color: white;
+}
+.contact form input[type='submit'] {
+    color: white;
+    background-color: var(--Main-color);
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+/* The End Of The Contact Us Section  */
+/* The Start Of The Footer Section  */
+footer {
+    background-color: var(--Main-color);
+}
+footer .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer .container .text {
+    font-weight: bold;
+    color: white;
+}
+footer .container .text p a {
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+footer .container .text p a:hover {
+    color: black;
+}
+footer .sm {
+    display: flex;
+}
+footer .sm img{
+    width: 45px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+/* The End Of The Footer Section  */
+/* Mobile media */
+@media (max-width: 768px) {
+    header nav .Toggole {
+        display: flex;
+    }
+    header nav ul {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        z-index: 1;
+        top: 80%; 
+        width: 100%;
+    }
+    header nav ul li {
+        padding: 20px;
+        border: 1px solid;
+    }
+    header nav ul li a:hover {
+       border: none
+    }
+    header nav ul li a {
+        border: none;
+        color: white
+    }
+    .show {
+        display: block;
+    }
+    .portfolio .indicators ul {
+        display: none;
+    }
+    .services .container {
+        flex-direction: column;
+    }
+    .clients .images {
+        flex-direction: column;
+    }
+    .clients .images img {
+        margin-bottom: 50px;
+    }
+    footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    footer .sm img:first-child {
+        margin-left: 0;
+    }
+    .contact form input[type='email'],
+    .contact form textarea {
+        width: 250px;
+    }
+}
